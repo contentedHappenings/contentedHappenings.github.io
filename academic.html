@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Projects | Corey Hommel</title>
+    <style>
+        /* CSS Styles */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #fafafa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        /* Header matches the home page, but adds a Back button */
+        header {
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fafafa;
+            border-bottom: 1px solid #eaeaea;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            height: 50px; /* Slightly smaller than home page for a cleaner top bar */
+            width: auto;
+        }
+        .back-link {
+            text-decoration: none;
+            color: #5c1b40;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: opacity 0.3s ease;
+        }
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        /* Main Content Container */
+        main {
+            flex-grow: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px;
+            width: 100%;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #5c1b40;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+        }
+
+        /* Individual Project Styling */
+        .project {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        .project:last-child {
+            border-bottom: none;
+        }
+        .project-title {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin: 0 0 15px 0;
+        }
+        .project-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 25px;
+            max-width: 800px;
+        }
+
+        /* Responsive Image Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            display: block;
+        }
+
+        /* Minimalist Footer */
+        footer {
+            padding: 30px 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            letter-spacing: 1px;
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="logo.png" alt="Corey Hommel Logo" class="logo">
+        </a>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </header>
+
+    <main>
+        <h1 class="page-title">Academic Projects</h1>
+
+        <article class="project">
+            <h2 class="project-title">3D Scanning & BIM Integration</h2>
+            <p class="project-description">This is where you will write a short, clean description of the project. Explain the tools you used, the goal of the assignment, and what you achieved.</p>
+            
+            <div class="gallery">
+                <img src="project1-img1.jpg" alt="Project 1 Preview">
+                <img src="project1-img2.jpg" alt="Project 1 Details">
+                <img src="project1-img3.jpg" alt="Project 1 Render">
+            </div>
+        </article>
+
+        <article class="project">
+            <h2 class="project-title">Simulation & Game Environment</h2>
+            <p class="project-description">Another brief description for your next project. The layout will automatically push this below the first project's image gallery.</p>
+            
+            <div class="gallery">
+                <img src="project2-img1.jpg" alt="Project 2 Preview">
+            </div>
+        </article>
+
+    </main>
+
+    <footer>
+        contentedhappenings@gmail.com • Clemmons, NC
+    </footer>
+
+</body>
+</html>
