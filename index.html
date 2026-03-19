@@ -43,8 +43,8 @@
         
         /* The link boxes */
         .card {
-            flex: 1; /* Makes all three boxes equal width */
-            height: 65vh; /* Sets a nice, tall height for the boxes */
+            flex: 1; /* Makes all three boxes equal width/height */
+            height: 65vh; 
             position: relative;
             display: flex;
             align-items: center;
@@ -54,7 +54,7 @@
             overflow: hidden;
             
             /* Placeholder background colors until you link your images */
-            background-color: #5c1b40; /* Matched roughly to the logo color */
+            background-color: #5c1b40; 
             background-size: cover;
             background-position: center;
             transition: transform 0.3s ease;
@@ -74,7 +74,7 @@
             transition: background 0.3s ease;
         }
         .card:hover .card-overlay {
-            background: rgba(0, 0, 0, 0.2); /* Lightens up when hovered */
+            background: rgba(0, 0, 0, 0.2); 
         }
 
         .card h2 {
@@ -97,6 +97,34 @@
             font-size: 0.9rem;
             color: #777;
             letter-spacing: 1px;
+        }
+
+        /* ========================================== */
+        /* MOBILE RESPONSIVENESS                      */
+        /* ========================================== */
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+                text-align: center; /* Centers the logo on mobile */
+            }
+            .logo {
+                height: 50px; /* Scales the logo down slightly */
+            }
+            main {
+                flex-direction: column; /* Stacks the boxes vertically instead of horizontally */
+                padding: 0 20px;
+                gap: 15px; /* Slightly smaller gap between boxes */
+            }
+            .card {
+                width: 100%;
+                height: auto; /* Allows the boxes to size themselves vertically */
+            }
+            .card h2 {
+                font-size: 1.8rem; /* Scales the text down to fit nicely on narrow screens */
+            }
+            footer {
+                padding: 15px 20px 20px;
+            }
         }
     </style>
 </head>
