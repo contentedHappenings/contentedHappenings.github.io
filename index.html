@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corey Hommel | Portfolio</title>
+    <style>
+        /* CSS Styles */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Forces the page to be exactly the height of the screen */
+            overflow: hidden; /* Disables all scrolling */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            background-color: #fafafa;
+            color: #333;
+        }
+        
+        /* Header containing the logo */
+        header {
+            padding: 30px 40px;
+            flex-shrink: 0; /* Prevents the header from squishing */
+        }
+        .logo {
+            height: 70px; /* Adjust this to make the logo larger or smaller */
+            width: auto;
+        }
+
+        /* Main content area for the three boxes */
+        main {
+            flex-grow: 1; /* Takes up all remaining middle space */
+            display: flex;
+            gap: 20px;
+            padding: 0 40px;
+            align-items: center; /* Centers boxes vertically */
+            justify-content: center; /* Centers boxes horizontally */
+        }
+        
+        /* The link boxes */
+        .card {
+            flex: 1; /* Makes all three boxes equal width */
+            height: 65vh; /* Sets a nice, tall height for the boxes */
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border-radius: 8px;
+            overflow: hidden;
+            
+            /* Placeholder background colors until you link your images */
+            background-color: #5c1b40; /* Matched roughly to the logo color */
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Hover animation to make the boxes pop slightly */
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Dark overlay so the white text is always readable over your images */
+        .card-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            transition: background 0.3s ease;
+        }
+        .card:hover .card-overlay {
+            background: rgba(0, 0, 0, 0.2); /* Lightens up when hovered */
+        }
+
+        .card h2 {
+            position: relative;
+            color: white;
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            z-index: 2;
+        }
+
+        /* Minimalist Footer */
+        footer {
+            padding: 20px 40px 30px;
+            flex-shrink: 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="Corey Hommel Logo" class="logo">
+    </header>
+
+    <main>
+        <a href="academic.html" class="card" style="background-image: url('your-academic-image.jpg');">
+            <div class="card-overlay"></div>
+            <h2>Academic Projects</h2>
+        </a>
+        
+        <a href="professional.html" class="card" style="background-image: url('your-professional-image.jpg');">
+            <div class="card-overlay"></div>
+            <h2>Professional Projects</h2>
+        </a>
+        
+        <a href="personal.html" class="card" style="background-image: url('your-personal-image.jpg');">
+            <div class="card-overlay"></div>
+            <h2>Personal Projects</h2>
+        </a>
+    </main>
+
+    <footer>
+        contentedhappenings@gmail.com [cite: 2] • Clemmons, NC [cite: 2]
+    </footer>
+
+</body>
+</html>
