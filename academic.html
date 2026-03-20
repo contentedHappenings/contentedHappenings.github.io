@@ -9,6 +9,9 @@
         * {
             box-sizing: border-box;
         }
+        html {
+            scroll-behavior: smooth; /* Makes the page glide down when clicking a link */
+        }
         body {
             margin: 0;
             padding: 0;
@@ -60,9 +63,40 @@
             font-size: 2.5rem;
             font-weight: 300;
             color: #5c1b40;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             border-bottom: 2px solid #eaeaea;
             padding-bottom: 10px;
+        }
+
+        /* ========================================== */
+        /* PROJECT INDEX / TABLE OF CONTENTS STATYLES */
+        /* ========================================== */
+        .project-index {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 0 0 50px 0;
+            padding: 0;
+            list-style: none;
+        }
+        .project-index li {
+            margin: 0;
+        }
+        .project-index a {
+            text-decoration: none;
+            color: #5c1b40;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            background-color: #f0f0f0;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .project-index a:hover {
+            background-color: #5c1b40;
+            color: #fff;
+            transform: translateY(-2px);
         }
 
         /* Individual Project Styling */
@@ -70,6 +104,7 @@
             margin-bottom: 60px;
             padding-bottom: 40px;
             border-bottom: 1px solid #eaeaea;
+            scroll-margin-top: 130px; /* Prevents the sticky header from hiding the project title when jumped to */
         }
         .project:last-child {
             border-bottom: none;
@@ -99,11 +134,11 @@
             border-radius: 4px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             display: block;
-            cursor: pointer; /* Makes it clear the image is clickable */
+            cursor: pointer; 
             transition: opacity 0.3s ease;
         }
         .gallery img:hover {
-            opacity: 0.8; /* Dims slightly when hovered */
+            opacity: 0.8; 
         }
 
         /* Minimalist Footer */
@@ -160,6 +195,16 @@
         .close-lightbox:hover {
             color: #bbb;
         }
+
+        /* Mobile Adjustments for the Header and Nav */
+        @media (max-width: 600px) {
+            header {
+                padding: 15px 20px;
+            }
+            main {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -173,10 +218,20 @@
 
     <main>
         <h1 class="page-title">Academic Projects</h1>
-
-<!-- PROJECTS CAN BE EDITED HERE -->
         
-        <article class="project">
+        <ul class="project-index">
+            <li><a href="#tiny-home">Tiny Home</a></li>
+            <li><a href="#architectural-poster">Architectural Poster</a></li>
+            <li><a href="#wood-design">Wood Design</a></li>
+            <li><a href="#snyder-hall">Snyder Hall Upfit</a></li>
+            <li><a href="#barrel-chair">Barrel Chair Sketch</a></li>
+            <li><a href="#masonry-wall">Masonry Bird Wall</a></li>
+            <li><a href="#kit-of-parts">Kit of Parts</a></li>
+            <li><a href="#broadmoor">Broadmoor</a></li>
+            <li><a href="#bienenstock">Bienenstock Art Gallery</a></li>
+        </ul>
+        
+        <article class="project" id="tiny-home">
             <h2 class="project-title">Tiny Home</h2>
             <p class="project-description">The Tiny Home project helped to reinforce the idea of working with square footage restraints to emulate real world projects. The aim of this project was to design a tiny home that adhered to а program requiring specific spaces while working with a small square footage and budget.</p>
             
@@ -189,22 +244,7 @@
             </div>
         </article>
 
-        <article class="project">
-            <h2 class="project-title">Bienenstock Art Gallery</h2>
-            <p class="project-description">The Bienenstock Interior Design Competition is a national competition hosted by the Bienenstock Furniture Library annually. Pictured is my attempt at completing their 2025 art gallery design challenge. My approach was to make it hyper-modular to accomodate any artist.</p>
-            
-            <div class="gallery">
-                <img src="Ceiling Lighting.png" alt="Ceiling Lighting">
-                <img src="Light Closeup.png" alt="Light Closeup">
-                <img src="Alterntaive Lighting.png" alt="Alterntaive Lighting">
-                <img src="Modular Pedestals.png" alt="Modular Pedestals">
-                <img src="Modular Viewing Area.png" alt="Modular Viewing Area">
-                <img src="Lit Gallery.png" alt="Lit Gallery">
-                <img src="Gallery Decorated.png" alt="Gallery Decorated">
-            </div>
-        </article>
-
-        <article class="project">
+        <article class="project" id="architectural-poster">
             <h2 class="project-title">Architectural Poster</h2>
             <p class="project-description">Pictured is my attempt at designing a new poster to advertise the Forsyth Technical Community College Architectural Technologies programs. Listed are the types of degrees and certificates this program awards and examples of the type of work that prospective students can expect to do.</p>
             
@@ -214,7 +254,7 @@
             </div>
         </article>
 
-        <article class="project">
+        <article class="project" id="wood-design">
             <h2 class="project-title">Wood Design</h2>
             <p class="project-description">The Wood Design project was an exploration of materials, creativity, teambuilding, and time management. The wooden structure created and refined was designed as a multi-level gazebo to accommodate multiple ways to enjoy the outdoors on multiple levels, literally and figuratively.</p>
             
@@ -230,7 +270,7 @@
             </div>
         </article>
 
-        <article class="project">
+        <article class="project" id="snyder-hall">
             <h2 class="project-title">Snyder Hall Upfit</h2>
             <p class="project-description">The Snyder 6205 Upfit project helped reinforce the idea of working with square footage restraints to emulate real world projects. The aim of this project was to design a new floor plan for an existing structure while adhering to a required program of spaces that were to be accounted for.</p>
             
@@ -241,7 +281,7 @@
             </div>
         </article>
 
-        <article class="project">
+        <article class="project" id="barrel-chair">
             <h2 class="project-title">Barrel Chair Sketch</h2>
             <p class="project-description">A quick sketch of Frank Lloyd Wright's "Barrel Chair". Sketching regularly helps one to gain greater attention to detail as well as express one's ideas quickly and efficiently. They don't necessarily have to be pretty as long as they serve their function.</p>
             
@@ -250,7 +290,7 @@
             </div>
         </article>
 
-        <article class="project">
+        <article class="project" id="masonry-wall">
             <h2 class="project-title">Masonry Bird Wall</h2>
             <p class="project-description">The Masonry Wall design project was an exploration of materials, creativity, teambuilding, and time management. The wall created and refined was designed with the explicit intent to allow birds to nest within its cavities to combat the decline of their natural habitat from deforestation.</p>
             
@@ -262,7 +302,7 @@
             </div>
         </article>
 
-        <article class="project">
+        <article class="project" id="kit-of-parts">
             <h2 class="project-title">Kit of Parts</h2>
             <p class="project-description">The Kit of Parts is an exploration of composition and the design process through the discovery and creation of solids and voids. This was achieved by assembling a predetermined set of parts with predefined dimensions in three-dimensional space.</p>
             
@@ -282,7 +322,7 @@
             </div>
         </article>
 
-        <article class="project">
+        <article class="project" id="broadmoor">
             <h2 class="project-title">Broadmoor</h2>
             <p class="project-description">The Broadmoor project introduced new constraints such as budgetary restrictions, lot size restrictions, and square footage restrictions to emulate a real-world project. Furthermore, the design called for hurricane resistant construction measures as well as sustainable design decisions.</p>
             
@@ -293,7 +333,20 @@
             </div>
         </article>
 
-        
+        <article class="project" id="bienenstock">
+            <h2 class="project-title">Bienenstock Art Gallery</h2>
+            <p class="project-description">The Bienenstock Interior Design Competition is a national competition hosted by the Bienenstock Furniture Library annually. Pictured is my attempt at completing their 2025 art gallery design challenge. My approach was to make it hyper-modular to accomodate any artist.</p>
+            
+            <div class="gallery">
+                <img src="Ceiling Lighting.png" alt="Ceiling Lighting">
+                <img src="Light Closeup.png" alt="Light Closeup">
+                <img src="Alterntaive Lighting.png" alt="Alterntaive Lighting">
+                <img src="Modular Pedestals.png" alt="Modular Pedestals">
+                <img src="Modular Viewing Area.png" alt="Modular Viewing Area">
+                <img src="Lit Gallery.png" alt="Lit Gallery">
+                <img src="Gallery Decorated.png" alt="Gallery Decorated">
+            </div>
+        </article>
 
     </main>
 
