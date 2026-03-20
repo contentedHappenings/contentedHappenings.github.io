@@ -10,7 +10,7 @@
             box-sizing: border-box;
         }
         html {
-            scroll-behavior: smooth; /* Makes the page glide down when clicking a link */
+            scroll-behavior: smooth; 
         }
         body {
             margin: 0;
@@ -23,7 +23,6 @@
             min-height: 100vh;
         }
         
-        /* Header matches the home page, but adds a Back button */
         header {
             padding: 30px 40px;
             display: flex;
@@ -50,7 +49,6 @@
             opacity: 0.7;
         }
 
-        /* Main Content Container */
         main {
             flex-grow: 1;
             max-width: 1000px;
@@ -63,40 +61,57 @@
             font-size: 2.5rem;
             font-weight: 300;
             color: #5c1b40;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             border-bottom: 2px solid #eaeaea;
             padding-bottom: 10px;
         }
 
         /* ========================================== */
-        /* PROJECT INDEX / TABLE OF CONTENTS STYLES   */
+        /* THUMBNAIL PREVIEW GRID STYLES              */
         /* ========================================== */
         .project-index {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 0 0 50px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 0 0 60px 0;
             padding: 0;
             list-style: none;
         }
-        .project-index li {
-            margin: 0;
-        }
         .project-index a {
+            position: relative;
+            display: flex;
+            align-items: flex-end; 
+            justify-content: center;
+            height: 140px; 
             text-decoration: none;
-            color: #5c1b40;
-            font-size: 0.95rem;
-            font-weight: 500;
-            padding: 8px 16px;
-            background-color: #f0f0f0;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            display: inline-block;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-color: #5c1b40; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            line-height: 1.2;
         }
         .project-index a:hover {
-            background-color: #5c1b40;
-            color: #fff;
-            transform: translateY(-2px);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+        .project-index a::before {
+            content: "";
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
+            z-index: 1;
+        }
+        .project-index span {
+            position: relative;
+            z-index: 2; 
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5); 
         }
 
         /* Individual Project Styling */
@@ -104,7 +119,7 @@
             margin-bottom: 60px;
             padding-bottom: 40px;
             border-bottom: 1px solid #eaeaea;
-            scroll-margin-top: 130px; /* Prevents the sticky header from hiding the project title when jumped to */
+            scroll-margin-top: 130px; 
         }
         .project:last-child {
             border-bottom: none;
@@ -134,14 +149,13 @@
             border-radius: 4px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             display: block;
-            cursor: pointer; /* Makes it clear the image is clickable */
+            cursor: pointer; 
             transition: opacity 0.3s ease;
         }
         .gallery img:hover {
-            opacity: 0.8; /* Dims slightly when hovered */
+            opacity: 0.8; 
         }
 
-        /* Minimalist Footer */
         footer {
             padding: 30px 40px;
             text-align: center;
@@ -196,13 +210,15 @@
             color: #bbb;
         }
 
-        /* Mobile Adjustments for the Header and Nav */
         @media (max-width: 600px) {
             header {
                 padding: 15px 20px;
             }
             main {
                 padding: 20px;
+            }
+            .project-index {
+                grid-template-columns: repeat(2, 1fr); 
             }
         }
     </style>
@@ -220,10 +236,26 @@
         <h1 class="page-title">Personal Projects</h1>
         
         <ul class="project-index">
-            <li><a href="#teapot-lighthouse">Teapot Lighthouse</a></li>
-            <li><a href="#moravian-star">Moravian Star</a></li>
-            <li><a href="#crow-models">Crow Models</a></li>
-            <li><a href="#quartz-typeface">Quartz Typeface</a></li>
+            <li>
+                <a href="#teapot-lighthouse" style="background-image: url('Teapot Lighthouse.png');">
+                    <span>Teapot Lighthouse</span>
+                </a>
+            </li>
+            <li>
+                <a href="#moravian-star" style="background-image: url('Moravian Star.png');">
+                    <span>Moravian Star</span>
+                </a>
+            </li>
+            <li>
+                <a href="#crow-models" style="background-image: url('Low Poly Crow.png');">
+                    <span>Crow Models</span>
+                </a>
+            </li>
+            <li>
+                <a href="#quartz-typeface" style="background-image: url('Quartz Font.png');">
+                    <span>Quartz Typeface</span>
+                </a>
+            </li>
         </ul>
         
         <article class="project" id="teapot-lighthouse">
